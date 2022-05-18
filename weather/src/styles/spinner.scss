@@ -1,0 +1,91 @@
+
+.loader{
+    position: absolute;
+    left: 46vw;
+    bottom: 35vh;
+    width: 100px;
+    height:100px;
+    position:relative;
+}
+
+.loader {
+    div{
+        position:absolute;
+        width: 35%;
+        height: 35%;
+        border-radius:5px;
+        animation: load 1s infinite ease-in-out;
+    }
+}
+
+.loader div:nth-of-type(1){
+    background-color:#B22727;
+}
+
+.loader div:nth-of-type(2){
+    background-color:#EE5007;
+    animation-delay:0.25s;
+}
+
+.loader div:nth-of-type(3){
+    background-color:#F8CB2E;
+    animation-delay:0.5s;
+  }
+    .loader div:nth-of-type(4){
+    background-color:#006E7F;
+    animation-delay:0.75s;
+}
+
+@keyframes load {
+0% {
+    transform: translate(0%);
+    border-radius: 50%;
+}
+
+25% {
+    transform: translate(200%) rotate(45deg);
+    border-radius: 0%;
+}
+
+50% {
+    transform: translate(200%, 200%);
+    border-radius: 50%;
+}
+
+75% {
+    transform: translate(0, 200%) rotate(-45deg);
+    border-radius: 0%;
+}
+100% {
+    transform: translate(0%);
+    border-radius: 50%;
+}
+}
+
+@media screen and (max-width:1000px) {
+    .loader{
+        left: 45vw !important;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .loader{
+        left: 40vw !important;
+    }
+}
+
+
+@media screen and (max-width:500px) and (max-height:600px) {
+    .loader{
+        left: 30vw !important;
+    }
+}
+
+@media screen and (max-width:500px) and (min-height:600px){
+    .loader{
+        left: 43vw !important;
+        bottom: 28vh !important;
+        width: 80px;
+        height:80px;
+    }
+}

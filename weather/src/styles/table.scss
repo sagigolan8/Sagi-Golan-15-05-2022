@@ -1,0 +1,76 @@
+.ptable {
+    font-family: Fjalla One,'Montserrat', sans-serif;
+    color: white;
+    margin: 0;
+    background-color: #0097e6;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px black;
+    table{
+        margin: 30px auto;
+        border-collapse: collapse;
+    }
+    .col{
+        border-bottom: 1px solid #dfdfdf;
+    }
+    th, td {
+        padding: 10px;
+    }
+
+    th{
+        color: #fff;
+    }
+    
+    .headin{
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        margin: 30px;
+        display: block;
+        padding-top: 20px;
+    }
+
+    .pos{
+        text-align: center;
+        td{
+            // color: #77ff21;
+            color: #dfdfdf;
+        }
+        &:hover{
+            background-color: #dfdfdf;
+            td{
+                color: #000000dd;
+            }
+        }
+    }
+}
+
+/*Media Queries landscape (max-width) => 1000px, 450px, 3500px, 3000px */
+
+@media screen and (max-width:1000px) {
+    .ptable {
+        font-size: 1rem;
+        margin: 0 0 0 0;
+    }
+}
+@media screen and (max-width:450px) {
+    .headin{
+        font-size: 1.2rem !important; 
+    }
+    .ptable {
+        font-size: .8rem;
+    }
+}
+@media screen and (max-width:350px) {
+    .ptable {
+        font-size: .6rem;
+    }
+    .headin{
+        font-size: 1rem !important;
+    }
+}
+@media screen and (max-width:300px) {
+    .headin{
+        font-size: .96rem !important;
+    }
+}
+
