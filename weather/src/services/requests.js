@@ -1,15 +1,15 @@
 import axios from 'axios';
 import moment from 'moment';
 
+/**
+ * export const apiKey = process.env.REACT_APP_API_KEY; 
+ * For some reason the REACT_APP_API_KEY could not be used and blocked by CORS policy 
+ * So I had no choice but use Hard coding 
 
-// export const apiKey = 'XspsWnNqGS0hy7k5LNHiCuXwiUGGzkkm';
-// export const apiKey = '1NYwS77s9H5OYZZG0oCYhkTYDxZD9DfA';
-export const apiKey = 'bA8sF0JQ9Tc1sgr1fk5sKHYv26Y0G4Hq'; 
-// export const apiKey = 'g5SsfowpZKoZWO8WzAst70bAngwgjtaV'; 
-// export const apiKey = 'SpbAx7eGUVjkAt652fu7AhbNwVKGo8Gd'; 
-// export const apiKey = 'aNKPgAh2mO36doBqRtD5DXgpspe8X6w6'; 
-// export const apiKey = '6hsVPdnHHmTdHT4vwGIuZAZhRA2MUHaD'; 
-// export const apiKey = 'XspsWnNqGS0hy7k5LNHiCuXwiUGGzkkm'; 
+*/ 
+
+export const apiKey = '6yDoWsvqNkIE6g3DwnaVmgF2FwbqIW3s';
+
 
 const getForecast = async (cityKey) =>{
   const baseUrl = `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}`;
