@@ -34,7 +34,7 @@ export const Section = styled.section`
 	}
 	background-size: cover;
     background-repeat: no-repeat;
-    background-image: linear-gradient(to bottom, #363946, #363946 48%,#ff9900 2% ,#ff9900 52%, #ff9900);
+    background-image: linear-gradient(to bottom, #eadfbf, #eadfbf 48%,#ff9900 2% ,#ff9900 52%, #ff9900);
 `;
 
 export const RowContainer = styled.div`
@@ -99,7 +99,6 @@ export const ReviewSlider = styled(Slider)`
 	.slick-track {
 		display: flex;
 		padding: 30px;
-		// gap: 6rem;
 		gap: 3rem;
 		cursor: grabbing;
 	}
