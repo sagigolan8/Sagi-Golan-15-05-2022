@@ -1,5 +1,5 @@
-import React from 'react'
-import citiesList from '../helpers/capitals'
+import React from 'react';
+import citiesList from '../helpers/capitals';
 
 import '../styles/table.scss'
 export default function CapitalsTable() {
@@ -15,9 +15,9 @@ export default function CapitalsTable() {
                 {
                     citiesList.map(({country,city,id},i)=>{
                         return <tr className='pos' key={id}>
-                            <td>{country}</td>
-                            <td>{city}</td>
-                            </tr>
+                                    <td>{country}</td>
+                                    <td>{city}</td>
+                               </tr>
                     })
                 }
                 </tbody>

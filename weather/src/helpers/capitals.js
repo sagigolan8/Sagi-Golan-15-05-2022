@@ -894,5 +894,5 @@ const citiesList = [
         city: "Harare",
         id: Math.random()*100000,
     }
-]
+];
 export default citiesList;

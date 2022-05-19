@@ -24,7 +24,7 @@ export const counterSlice = createSlice({
     },
 }, [], (state) => state);
 
-export const { updateCity } = counterSlice.actions
+export const { updateCity } = counterSlice.actions;
 
 export default counterSlice.reducer;
 

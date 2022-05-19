@@ -12,7 +12,7 @@ export const counterSlice = createSlice({
     },
 }, [], (state) => state);
 
-export const { updateIsDay } = counterSlice.actions
+export const { updateIsDay } = counterSlice.actions;
 
 export default counterSlice.reducer;
 

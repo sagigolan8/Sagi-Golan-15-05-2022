@@ -13,7 +13,7 @@ export const counterSlice = createSlice({
   },
 },[],(state)=>state);
 
-export const { addFavorite, removeFavorite } = counterSlice.actions
+export const { addFavorite, removeFavorite } = counterSlice.actions;
 
 export default counterSlice.reducer;
 

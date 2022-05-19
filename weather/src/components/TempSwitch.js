@@ -20,9 +20,9 @@ const options = [
 const initialSelectedIndex = options.findIndex(({value}) => value === "C");
 
 export default function TempSwitch({borderStyle}) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const onChange = (newValue) => dispatch(updateTempType(newValue))
+  const onChange = (newValue) => dispatch(updateTempType(newValue));
  
   return (
     <div 

@@ -11,7 +11,7 @@ export const counterSlice = createSlice({
     },
 }, [], (state) => state);
 
-export const { updateTempType } = counterSlice.actions
+export const { updateTempType } = counterSlice.actions;
 
 export default counterSlice.reducer;
 

@@ -28,16 +28,16 @@ const linksData = [
 
 const Navbar = () => {
     const {isDay} = useSelector((state) => state.isDay);
-	const navRef = useRef()
+	const navRef = useRef();
 	const [show, setShow] = useState(false);
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 
 	const handleClick = () => {
 		setShow(!show);
 	};
 
 	const closeMobileMenu = (to) => {
-		navigate(to)
+		navigate(to);
 		setShow(false);
 	};
 

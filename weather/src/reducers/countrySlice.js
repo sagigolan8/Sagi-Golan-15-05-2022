@@ -15,7 +15,7 @@ export const counterSlice = createSlice({
     },
 }, [], (state) => state);
 
-export const { updateCountry } = counterSlice.actions
+export const { updateCountry } = counterSlice.actions;
 
 export default counterSlice.reducer;
 

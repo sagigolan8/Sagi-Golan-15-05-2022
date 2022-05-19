@@ -52,7 +52,7 @@ BootstrapDialogTitle.propTypes = {
 export default function CitiesModal() {
   
   const [open, setOpen] = React.useState(false);
-  const [theme, setTheme] = React.useState({border:'none'})
+  const theme = {border:'none'};
 
   const initial = {
 		y: 0,

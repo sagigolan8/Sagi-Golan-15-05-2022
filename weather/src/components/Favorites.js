@@ -25,11 +25,11 @@ import { removeFavorite } from '../reducers/favoritesSlice';
 import { infoNotification } from '../helpers/alerts';
 
 const Favorites = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favorites);
   const tempType = useSelector((state) => state.tempType);
   const [sliderRef, setSliderRef] = useState(null);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const sliderSettings =
   favorites.length &&
@@ -59,14 +59,14 @@ const Favorites = () => {
   };
   
   const handleSearch = (city) =>{
-  	dispatch(updateCity({...city,favorite: true}))
-  	navigate('/',{ state: { payload: city.name } })
+  	dispatch(updateCity({...city,favorite: true}));
+  	navigate('/',{ state: { payload: city.name } });
   }  
   const removeFromFavorites = (city) =>{
-  	dispatch(updateCity({...city, favorite: false}))
-  	dispatch(removeFavorite({key:city.key}))
+  	dispatch(updateCity({...city, favorite: false}));
+  	dispatch(removeFavorite({key:city.key}));
   	infoNotification
-  	(`${city.name.charAt(0).toUpperCase()}${city.name.slice(1)} deleted from your favorites`)
+  	(`${city.name.charAt(0).toUpperCase()}${city.name.slice(1)} deleted from your favorites`);
   }  
 
   return (

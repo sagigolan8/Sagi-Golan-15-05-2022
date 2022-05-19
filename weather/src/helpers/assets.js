@@ -26,16 +26,16 @@ export const getBackground = (iconNum) =>{
   if (iconNum === 5) { /*Hazy*/
     backgroundVideo = "./assets/Hazy.mp4";
   }
-  if ((iconNum >= 6 && iconNum <= 7) || (iconNum >= 19 && iconNum <= 23) || (iconNum >= 25 && iconNum <= 26) || (iconNum == 31) || (iconNum == 32) || (iconNum >= 3 && iconNum <= 4)) { /*Cloudy*/
+  if ((iconNum >= 6 && iconNum <= 7) || (iconNum >= 19 && iconNum <= 23) || (iconNum >= 25 && iconNum <= 26) || (iconNum === 31) || (iconNum === 32) || (iconNum >= 3 && iconNum <= 4)) { /*Cloudy*/
     backgroundVideo = "./assets/Cloudy.mp4";
   }
-  if (iconNum == 8) { /*Overcast */
+  if (iconNum === 8) { /*Overcast */
     backgroundVideo = "./assets/Overcast.mp4";
   }
   if (iconNum === 11) { /*Fog*/
     backgroundVideo = "./assets/Fog.mp4";
   }
-  if (iconNum >= 12 && iconNum <= 18 || iconNum === 29) { /*Rain */
+  if ((iconNum >= 12 && iconNum <= 18) || iconNum === 29) { /*Rain */
     backgroundVideo = "./assets/Rain.mp4";
   }
   if (iconNum >= 24) { /*Snow*/

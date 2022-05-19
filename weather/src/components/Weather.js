@@ -21,61 +21,61 @@ import { updateCountry } from '../reducers/countrySlice';
 import { flagCdn, getBackground, moonImg, sunImg, unKnownFlag } from '../helpers/assets';
 import { addFavorite, removeFavorite } from '../reducers/favoritesSlice';
 import { useLocation } from 'react-router-dom';
-import '../styles/weather.scss'
+import '../styles/weather.scss';
 import LoadingSpinner from './LoadingSpinner';
 
 
 export default function Weather() {
   /* States */
-  const [isLoading, setIsLoading] = useState(false)
-  const [filteredArray, setFilteredArray] = useState([])
+  const [isLoading, setIsLoading] = useState(false);
+  const [filteredArray, setFilteredArray] = useState([]);
   const dispatch = useDispatch();
   const city = useSelector((state) => state.city);
   const favorites = useSelector((state) => state.favorites);
 
   /* Refs */
-  const videoRef = useRef()
+  const videoRef = useRef();
 
-  const location = useLocation()
+  const location = useLocation();
 
   /* Show Tel Aviv by default */
   useEffect(() => {
-    handleSearch(location.state?.payload)
+    handleSearch(location.state?.payload);
   }, [])
 
 
   /*Functions */
   const getOptions = debounce(async (value) => {
-    const baseUrl = 'https://dataservice.accuweather.com/locations/v1/cities/autocomplete'
-    const query = `?apikey=${apiKey}&q=${value}`
+    const baseUrl = 'https://dataservice.accuweather.com/locations/v1/cities/autocomplete';
+    const query = `?apikey=${apiKey}&q=${value}`;
     try {
-      const response = await axios.get(`${baseUrl}/${query}`)
+      const response = await axios.get(`${baseUrl}/${query}`);
       const newArray = response.data.map((result) => {
-        const flag = flagCdn(result.Country.ID.toLowerCase())
+        const flag = flagCdn(result.Country.ID.toLowerCase());
         return {
           city: result.LocalizedName,
           flag,
           value: `${result.LocalizedName}, ${result.Country.ID}`
         }
-      })
-      setFilteredArray(uniqBy(newArray, 'value'))
+      });
+      setFilteredArray(uniqBy(newArray, 'value'));
     } catch (err) {
       console.log(err);
-      return null
+      return null;
     }
   }, 500)
 
 
   const handleSelectChange = (e, value) => {
     if (!value) {
-      return
+      return;
     }
-    handleSearch(value.city)
+    handleSearch(value.city);
   }
 
   const addToFavorites = (cityData) => {
     if (!cityData) {
-      return 
+      return;
     }
 
     const { name, key, currentWeather } = cityData
@@ -83,65 +83,65 @@ export default function Weather() {
       name,
       key,
       currentWeather,
-    }))
+    }));
 
     dispatch(updateCity({
       name,
       key,
       currentWeather,
       favorite: true
-    }))
+    }));
 
-    successNotification(`${name.charAt(0).toUpperCase()}${name.slice(1)} added to your favorites`)
+    successNotification(`${name.charAt(0).toUpperCase()}${name.slice(1)} added to your favorites`);
   }
 
 
   const removeFromFavorites = (cityData) => {
     if (!cityData) {
-      return 
+      return;
     }
 
     const { name, key, currentWeather } = cityData
-    dispatch(removeFavorite({ key }))
+    dispatch(removeFavorite({ key }));
 
     dispatch(updateCity({
       name,
       key,
       currentWeather,
       favorite: false
-    }))
+    }));
 
-    infoNotification(`${name.charAt(0).toUpperCase()}${name.slice(1)} deleted from your favorites`)
+    infoNotification(`${name.charAt(0).toUpperCase()}${name.slice(1)} deleted from your favorites`);
   }
 
 
   const handleSearch = async (city = 'tel aviv') => {
     setIsLoading(true);
     if (!city) {
-      return
+      return;
     }
 
 
-    const data = await getWeatherByCity(city)
+    const data = await getWeatherByCity(city);
     if (!data) {
       setIsLoading(false);
-      return errorNotification('The request limit has been reached try again later..')
+      return errorNotification('The request limit has been reached try again later..');
     }
     setIsLoading(false);
 
 
     /*Update forecast state*/
-    dispatch(updateForecast(data.forecast))
+    dispatch(updateForecast(data.forecast));
 
 
     /*Update country state*/
-    const { countryName, countryCode } = data.country
+    const { countryName, countryCode } = data.country;
     const countryFlag = flagCdn(countryCode);
     dispatch(updateCountry({
       name: countryName,
       code: countryCode,
       flag: countryFlag,
-    }))
+    }));
 
 
     /*Update city state*/
@@ -150,9 +150,9 @@ export default function Weather() {
       key: data.city.key,
       currentWeather: data.city.currentWeather,
       favorite: !favorites.length ? false : !!favorites.find(({ key }) => key === data.city.key)
-    }))
+    }));
 
-    backgroundDetective(data.city.currentWeather.weatherIcon, data.city.currentWeather.isDay)
+    backgroundDetective(data.city.currentWeather.weatherIcon, data.city.currentWeather.isDay);
 
   }
 
@@ -168,23 +168,23 @@ export default function Weather() {
             name: data.countryName,
             code: data.countryCode,
             flag: countryFlag,
-          }))
-          handleSearch(data.city)
+          }));
+          handleSearch(data.city);
         })
       }
       else {
-        return errorNotification('This feature requires your consent')
+        return errorNotification('This feature requires your consent');
       }
     } catch (err) {
       console.log(err);
-      return null
+      return null;
     }
   }
 
   const backgroundDetective = (iconNum, isDay) => {
-    dispatch(updateIsDay(isDay ? sunImg : moonImg))
-    const backgroundVideo = getBackground(iconNum)
-    videoRef.current.src = backgroundVideo
+    dispatch(updateIsDay(isDay ? sunImg : moonImg));
+    const backgroundVideo = getBackground(iconNum);
+    videoRef.current.src = backgroundVideo;
   }
 
 

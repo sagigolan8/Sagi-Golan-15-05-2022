@@ -3,7 +3,7 @@ import {
   Route,
   Routes
 } from 'react-router-dom';
-import React from 'react'
+import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import Navbar from './components/Navbar';
 import Weather from './components/Weather';

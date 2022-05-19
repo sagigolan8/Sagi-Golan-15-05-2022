@@ -10,7 +10,7 @@ export const counterSlice = createSlice({
   },
 },[],(state)=>state);
 
-export const { updateForecast } = counterSlice.actions
+export const { updateForecast } = counterSlice.actions;
 
 export default counterSlice.reducer;
 
