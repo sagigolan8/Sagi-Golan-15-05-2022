@@ -107,7 +107,7 @@
       endpoint for this: [get location key by lat/lon](https://developer.accuweather.com/accuweather-locations-api/apis/get/locations/v1/cities/geoposition/search).
 - [x] Add Celsius/Fahrenheit toggle button.
 - [x] Add animations (with good taste).
-- [ ] Add dark/light theme support (add toggle button in the header).
+- [x] Add dark/light theme support (add toggle button in the header).
 
 <p style= "text-align:right">(<a href="#top">back to top</a>)</p>
 
