@@ -13,7 +13,6 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
 import axios from 'axios';
 import { debounce, uniqBy } from "lodash";
-import { updateIsDay } from '../reducers/isDaySlice';
 import { updateForecast } from '../reducers/forecastSlice';
 import CurrentWeather from './CurrentWeather';
 import Forecast from './Forecast';
@@ -182,7 +181,6 @@ export default function Weather() {
   }
 
   const backgroundDetective = (iconNum, isDay) => {
-    dispatch(updateIsDay(isDay ? sunImg : moonImg));
     const backgroundVideo = getBackground(iconNum);
     videoRef.current.src = backgroundVideo;
   }
