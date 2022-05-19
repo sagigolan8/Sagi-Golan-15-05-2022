@@ -48,6 +48,7 @@ const Navbar = () => {
 					<NavLogo>
 						<NavIcon onClick={(e)=>{
 							e.target.classList.toggle('spin');
+							document.body.classList.toggle('dark-mode');
 						}} src={isDay} alt="Is Day?" />
 					</NavLogo> 
 					<MobileIcon onClick={handleClick}>
