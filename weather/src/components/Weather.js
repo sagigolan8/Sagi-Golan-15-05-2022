@@ -264,17 +264,6 @@ export default function Weather() {
           </div>
 
 
-          {/* Search button */}
-          {/* <button onClick={()=>{
-              dispatch(addFavorite({
-                id:Date.now(),
-                city: Math.random()*10
-              }))
-            }} className="search-btn">
-              Dispatch
-            </button> */}
-
-
           {/* Display row of 3 values: current temp, temp switch, country flag, with flex */}
           <CurrentWeather />
 
