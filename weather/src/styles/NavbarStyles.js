@@ -56,15 +56,12 @@ export const NavIcon = styled.img`
 	margin-left: -1rem;
 	width: 55px;
 	overflow: hidden;
-	transition: all 0.8s ease;
+	transition: all 0.5s ease;
 	border-radius: 50%;
 	&:hover{
-		transition: all 0.8s ease;
+		transition: all 0.5s ease;
 		box-shadow: 0 10px 24px #14151c;
 		opacity:0.87;
-	}
-	@media screen and (max-width: 450px) {
-		// width: 10rem;
 	}
 `;
 
