@@ -158,7 +158,8 @@
 <p style= "text-align:right">(<a href="#top">back to top</a>)</p>
 
 - #### Deployment
-- [x] [Weather-App](http://accuweather-app.s3-website.us-east-2.amazonaws.com/)
+- [x] https - [Weather-App](https://weather-application.tk)
+- [x] http - [Weather-App](http://accuweather-app.s3-website.us-east-2.amazonaws.com)
 
 <p style= "text-align:right">(<a href="#top">back to top</a>)</p>
 
