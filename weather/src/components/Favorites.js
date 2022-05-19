@@ -70,7 +70,7 @@ const Favorites = () => {
   }  
 
   return (
-		<Section margin="auto" maxWidth="4050px" padding="50px 70px" >
+		<Section className='favorites-wrapper' margin="auto" maxWidth="4050px" padding="50px 70px" >
 		  <RowContainer justify="space-between" margin="1rem" wrap="wrap">
 			  <Heading width="auto">
 				  Favorites cities - {favorites.length}
@@ -99,7 +99,7 @@ const Favorites = () => {
 		  :  
 		  <ReviewSlider {...sliderSettings } ref={setSliderRef}>
 			  {favorites.map((el) => (
-				<CityWrapper key={el.key}>
+				<CityWrapper className='city-wrapper' key={el.key}>
 					<TextWrapper >{el.name}</TextWrapper>
 					<IconWrapper 
 						onClick={()=> removeFromFavorites(el)} 
@@ -110,7 +110,7 @@ const Favorites = () => {
 						src={iconCdn(el.currentWeather.weatherIcon)} 
 						alt="weather icon" 
 					/>
-					<Temperature>
+					<Temperature className='favorite-temp'>
 						{
 							(
 								`${tempType.tempType === 'C'
