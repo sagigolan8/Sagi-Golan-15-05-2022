@@ -2,14 +2,14 @@ import axios from 'axios';
 import moment from 'moment';
 
 
-export const apiKey = 'XspsWnNqGS0hy7k5LNHiCuXwiUGGzkkm';
-export const apiKey1 = '1NYwS77s9H5OYZZG0oCYhkTYDxZD9DfA';
-export const apiKey2 = 'bA8sF0JQ9Tc1sgr1fk5sKHYv26Y0G4Hq'; 
-export const apiKey3 = 'g5SsfowpZKoZWO8WzAst70bAngwgjtaV'; 
-export const apiKey4 = 'SpbAx7eGUVjkAt652fu7AhbNwVKGo8Gd'; 
-export const apiKey5 = 'aNKPgAh2mO36doBqRtD5DXgpspe8X6w6'; 
-export const apiKey6 = '6hsVPdnHHmTdHT4vwGIuZAZhRA2MUHaD'; 
-export const apiKey7 = 'XspsWnNqGS0hy7k5LNHiCuXwiUGGzkkm'; 
+// export const apiKey = 'XspsWnNqGS0hy7k5LNHiCuXwiUGGzkkm';
+// export const apiKey = '1NYwS77s9H5OYZZG0oCYhkTYDxZD9DfA';
+export const apiKey = 'bA8sF0JQ9Tc1sgr1fk5sKHYv26Y0G4Hq'; 
+// export const apiKey = 'g5SsfowpZKoZWO8WzAst70bAngwgjtaV'; 
+// export const apiKey = 'SpbAx7eGUVjkAt652fu7AhbNwVKGo8Gd'; 
+// export const apiKey = 'aNKPgAh2mO36doBqRtD5DXgpspe8X6w6'; 
+// export const apiKey = '6hsVPdnHHmTdHT4vwGIuZAZhRA2MUHaD'; 
+// export const apiKey = 'XspsWnNqGS0hy7k5LNHiCuXwiUGGzkkm'; 
 
 const getForecast = async (cityKey) =>{
   const baseUrl = `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}`;
